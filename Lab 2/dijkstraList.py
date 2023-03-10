@@ -21,6 +21,8 @@ class Graph():
 
         while pq:
             d,u = heapq.heappop(pq) # extract min node from pq
+            if d > dist[u]:
+                continue
 
 
             for v, weight in self.adj[u]: # look at the vertices that are connected to u

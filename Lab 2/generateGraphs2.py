@@ -1,5 +1,11 @@
 import networkx as nx
 import random
+# def create_graph_adjm(numNodes):
+#     G = nx.erdos_renyi_graph(numNodes, 0.5, seed=123, directed=False)
+#     for (u, v, w) in G.edges(data=True):
+#         w['weight'] = random.randint(1, 100)
+#     A = nx.adjacency_matrix(G).toarray()
+#     return A
 
 def create_graph_adjm(num_nodes):
     # create an empty graph
@@ -28,6 +34,7 @@ def create_graph_adjm(num_nodes):
                 G.add_edge(nodes1, nodes2, weight=weight)
 
     listComps = G.edges(data=True)
+    # arr.append(len(listComps))
 
     adjm = [[0 for _ in range(num_nodes)] for _ in range(num_nodes)] # generate adjacency matrix from graph edges
     for edge in listComps:
